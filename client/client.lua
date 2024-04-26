@@ -20,7 +20,6 @@ CreateThread(function()
     end
 end)
 
-
 function RepairMenu()
     exports['qb-menu']:openMenu({
 		{
