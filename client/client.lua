@@ -10,7 +10,7 @@ CreateThread(function()
         if dist <= 2 then 
             sleep = 2
             if QBCore.Functions.GetPlayerData().job.name == FastConfig.WeaponRepairPermission then 
-                QBCore.Functions.DrawText3D(RepairCoords.x, RepairCoords.y, RepairCoords.z, "[E] - Silah Tamir") 
+                QBCore.Functions.DrawText3D(RepairCoords.x, RepairCoords.y, RepairCoords.z, "[E] - Weapon Repair") 
                 if IsControlJustPressed(0, 38) then 
                     RepairMenu()
                 end
@@ -23,12 +23,12 @@ end)
 function RepairMenu()
     exports['qb-menu']:openMenu({
 		{
-			header = 'Silah Tamir',
+			header = 'Repair Repair',
 			icon = "fa-solid fa-store",
 			isMenuHeader = true, 
 		},
 		{
-			header = 'Silah Tamir Et',
+			header = 'Repair the Weapon',
 			txt = '$' .. tostring(FastConfig.WeaponRepairPrice),
 			icon = "fa-solid fa-arrow-right",
 			params = {
@@ -38,7 +38,7 @@ function RepairMenu()
 		},
 
 		{
-			header = 'Menüyü Kapat',
+			header = 'Close Menu',
 			icon = 'fas fa-right-to-bracket',
 			params = {
 				event = ''
