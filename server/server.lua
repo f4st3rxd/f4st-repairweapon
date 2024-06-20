@@ -15,10 +15,10 @@ RegisterServerEvent("f4st:server:repairweapon", function()
             elseif Player.Functions.GetMoney("bank") > RepairPrice then 
                 RepairWeapon("bank")
             else
-                TriggerClientEvent("QBCore:Notify", source, "Üstünüzde yeterli para yok", "error", 3000)
+                TriggerClientEvent("QBCore:Notify", source, "You don't have enough money on you", "error", 3000)
             end
         else
-            TriggerClientEvent("QBCore:Notify", source, "Tamir edilecek silah ilk slotta olmalı", "error", 3000)
+            TriggerClientEvent("QBCore:Notify", source, "The weapon to be repaired must be in the first slot", "error", 3000)
         end 
     else
         -- exports["f4st-base"]:DetectCheater("Tried Repair Weapon!")
@@ -29,14 +29,14 @@ end)
 function RepairWeapon(moneytype)
     local Player = QBCore.Functions.GetPlayer(source)
     local weapon = ox_inventory:GetCurrentWeapon(source)
-    Player.Functions.RemoveMoney(moneytype, RepairPrice, "Silah Tamiri")
+    Player.Functions.RemoveMoney(moneytype, RepairPrice, "Weapon Repair")
     
  
     if weapon then
         ox_inventory:SetDurability(source, weapon.slot, 100)
     end
 
-    TriggerClientEvent("QBCore:Notify", source, "Silahı başarıyla tamir ettiniz", "success", 3000)
+    TriggerClientEvent("QBCore:Notify", source, "You have successfully repaired the weapon", "success", 3000)
 end
 
 -- writed by f4st3r --
